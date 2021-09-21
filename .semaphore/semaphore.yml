@@ -25,7 +25,6 @@ blocks:
             - ./cc-test-reporter before-build
             - cache restore
             - bundle install --path vendor/bundle
-            - cache store
             - 'bundle exec rake db:create db:migrate'
             - bundle exec rspec
       epilogue:
