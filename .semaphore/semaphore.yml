@@ -28,12 +28,9 @@ blocks:
             - 'bundle exec rails db:create db:migrate'
             - bundle exec rspec
       epilogue:
-        always:
-          commands:
-            - ./cc-test-reporter after-build --exit-code
         on_pass:
           commands:
-            - echo 0
+            - ./cc-test-reporter after-build --exit-code 0
         on_fail:
           commands:
-            - echo 1
+            - ./cc-test-reporter after-build --exit-code 1
