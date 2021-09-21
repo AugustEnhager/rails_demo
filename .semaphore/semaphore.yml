@@ -30,7 +30,7 @@ blocks:
       epilogue:
         on_pass:
           commands:
-            - echo 0
+            - ./cc-test-reporter after-build --exit-code
         on_fail:
           commands:
-            - ./cc-test-reporter after-build --exit-code
+            - echo 0
