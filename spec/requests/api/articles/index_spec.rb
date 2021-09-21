@@ -1,13 +1,12 @@
 RSpec.describe 'GET /api/articles', type: :request do
-  
   subject { response }
-  
+
   describe 'when there are some articles in the database' do
     let!(:articles) do
       create_list(:article, 2)
       create(:article, title: 'My amazing news article')
     end
-    before do      
+    before do
       get '/api/articles'
     end
 
